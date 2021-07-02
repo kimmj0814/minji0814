@@ -1,0 +1,117 @@
+<div id="header">
+<div class="inner">
+    <div class="topArea">
+        <h1 module="Layout_LogoTop">
+            <!--@css(/css/module/layout/logotop.css)-->
+            <a href="/index.html"><span class='objHidden'>김민지이커머스포폴</span></a>
+        </h1>
+
+        <div id="category" module="Layout_category">
+            <!--@css(/css/module/layout/category.css)-->
+            <!--@js(/js/module/layout/category.js)-->
+            <div class="position">
+                <ul>
+                    <li><a href="{$link_product_list}">ALL BAG</a></li>
+                    <li><a href="/board/event/8/?board_no=8&category_no=1">EVENT</a></li>
+                    <li><a href="/board/free/list.html?board_no=4">REVIEW</a></li>
+                    <li><a href="/board/free/list.html?board_no=1">NOTICE</a></li>
+                    <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                    <li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <ul class="utileMenu right">
+          <li class="loginMenu">
+            <!-- 로그인 -->
+            <a href="#"><img src="/web/img/top_mypage.png" alt="" class="top_bk"></a>
+            <a href="#"><img src="/web/img/top_mypage_wh.png" alt="" class="top_wh"></a>
+            <div module="Layout_statelogoff" class="d2">
+                <a href="/member/login.html" class="log">로그인</a>
+                <a href="/myshop/index.html">마이쇼핑</a>
+            </div>
+
+            <div module="Layout_stateLogon" class="d2">
+                <a href="{$action_logout}" class="log">로그아웃</a>
+                <a href="/myshop/index.html">마이쇼핑</a>
+            </div>
+          </li>
+          <li class='searchBtn'>
+            <div class="search">
+              <input type="text" placeholder=" ">
+              <div>
+                  <svg>
+                      <use xlink:href="#path">
+                  </svg>
+              </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 28" id="path">
+                  <path d="M32.9418651,-20.6880772 C37.9418651,-20.6880772 40.9418651,-16.6880772 40.9418651,-12.6880772 C40.9418651,-8.68807717 37.9418651,-4.68807717 32.9418651,-4.68807717 C27.9418651,-4.68807717 24.9418651,-8.68807717 24.9418651,-12.6880772 C24.9418651,-16.6880772 27.9418651,-20.6880772 32.9418651,-20.6880772 L32.9418651,-29.870624 C32.9418651,-30.3676803 33.3448089,-30.770624 33.8418651,-30.770624 C34.08056,-30.770624 34.3094785,-30.6758029 34.4782612,-30.5070201 L141.371843,76.386562" transform="translate(83.156854, 22.171573) rotate(-225.000000) translate(-83.156854, -22.171573)"></path>
+              </symbol>
+          </svg>
+
+          <!-- dribbble -->
+          <a class="dribbble" href="https://dribbble.com/shots/5547403-Search-input-animation" target="_blank"><img src="https://dribbble.com/assets/logo-small-2x-9fe74d2ad7b25fba0f50168523c15fda4c35534f9ea0b1011179275383035439.png" alt=""></a>
+          <!-- 검색 -->
+          <!-- <a href="#none"><img src="/web/img/top_search.png" alt="" class="top_bk"></a>
+          <a href="#none"><img src="/web/img/top_search_wh.png" alt="" class="top_wh"></a> -->
+            <div module="Layout_SearchHeader" class="d2 searchFix">
+
+                <!--
+                    $product_page=/product/detail.html
+                    $category_page=/product/list.html
+                -->
+                <fieldset>
+                    <legend>검색</legend>
+                    {$form.keyword}<input type="image" src="//img.echosting.cafe24.com/skin/base/layout/btn_search.gif" alt="검색" onclick="{$action_search_submit}" /><ul class="autoDrop" id="{$search_auto_id}"></ul></fieldset>
+            </div>
+          </li>
+          <li>
+            <!-- 찜하기 -->
+              <a module="Layout_statelogoff" href="/myshop/wish_list.html">
+                <img src="/web/img/top_wish.png" alt="" class="top_bk"><img
+                src="/web/img/top_wish_wh.png" alt="" class="top_wh"><strong
+                >{$interest_prd_cnt}</strong>
+              </a>
+              <a module="Layout_stateLogon" href="/myshop/wish_list.html">
+                <img src="/web/img/top_wish.png" alt="" class="top_bk"><img
+                src="/web/img/top_wish_wh.png" alt="" class="top_wh"><strong
+                >{$interest_prd_cnt}</strong>
+              </a>
+          </li>
+          <li class="cart">
+            <!-- 장바구니 -->
+              <a module="Layout_statelogoff" href="/order/basket.html">
+                <img src="/web/img/top_cart_pc.png" alt="" class="top_bk"><img
+                src="/web/img/top_cart_pc_wh.png" alt="" class="top_wh"><span class="count {$basket_count_display|display} {$basket_count_display_class}"></span>
+              </a>
+              <a module="Layout_stateLogon" href="/order/basket.html">
+                <img src="/web/img/top_cart_pc.png" alt="" class="top_bk"><img
+                src="/web/img/top_cart_pc_wh.png" alt="" class="top_wh"><span
+                class="count {$basket_count_display|display} {$basket_count_display_class}"></span>
+              </a>
+          </li>
+        </ul>
+    </div>
+    <div module="board_listpackage_1" id="notice">
+        <div class="ec-base-table typeList gLine">
+            <ul border="1" summary="" module="board_list_1" id="rollingNotice">
+                <!--
+                    $count = 3
+                    $main_list = yes
+                    $subject_cut = 25
+                    $main_list_reply_view = no
+                -->
+                <li>
+                    <strong class="title"><span class="objHidden">제목</span><a href="{$link_board_detail}">{$subject}</a></strong>
+                </li>
+                <li>
+                    <strong class="title"><span class="objHidden">제목</span><a href="{$link_board_detail}">{$subject}</a></strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
